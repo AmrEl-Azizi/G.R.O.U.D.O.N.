@@ -160,19 +160,21 @@ void loop()
     
     if((first == 1 || second == 1) && (seventh == 1 || eighth == 1)){
         turnLeft(); 
+        delay(200);
+    }
+    else if(seventh == 1 || eighth == 1)
+      {
+        turnLeft();
+      }
+      else if(fourth == 1 && fifth == 1)
+    {
+      forward();
     }
     else if(first == 1 || second == 1)
       {
         turnRight();
       }
-    else if(seventh == 1 || eighth == 1)
-      {
-        turnLeft();
-      }
-    else if(fourth == 1 && fifth == 1)
-    {
-      forward();
-    }
+    
     else
     {
       forward();
@@ -185,19 +187,22 @@ void loop()
     else if(side == 2){  //on left field
      if((first == 1 || second == 1) && (seventh == 1 || eighth == 1)){
       turnRight();
+      delay(200);
      }
+     else if(first == 1 || second == 1)
+      {
+       turnRight();
+      }
+      else if(fourth == 1 && fifth == 1)
+    {
+      forward();
+    }
      else if(seventh == 1 || eighth == 1)
       {
         turnLeft();
       }
-      else if(first == 1 || second == 1)
-      {
-       turnRight();
-      }
-     else if(fourth == 1 && fifth == 1)
-    {
-      forward();
-    }
+      
+     
      else
     {
       forward();
