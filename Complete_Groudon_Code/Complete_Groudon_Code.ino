@@ -113,10 +113,10 @@ void loop()
     touch = digitalRead(8);  //PA5  touch sensor
 
     //Reading for wall sensor PD2 and PD3 white for voltage and red for signal
-    left = analogRead(26);
-    right = analogRead(25);   
-   
-    
+    left = analogRead(25);
+    right = analogRead(26);   
+       //Serial.println(side);
+
     // Checking line sensor value
     /*Serial.print("1: ");
     Serial.println(first);    //left
@@ -135,24 +135,23 @@ void loop()
     
     
     //Checking wall sensor value
-    /*Serial.println(left);
-    delay(200);
-    Serial.print(  '\t');
-    Serial.println(right);*/
+    //Serial.println(left);
+    //delay(200);
+    //Serial.print(  '\t');
+    //Serial.println(right);
    
     
     //Competition Code              
-
     //IR SENSOR
-    while(side = 0){
-      if((left > 2500) && (right < 2500)){     
+   while(side == 0){
+      if((left > 2500)){     
          side = 1;
-         forward()
-         delay(500);                            
+         forward();
+         delay(500);  
       }
-      else if((right > 2500) && (left < 2500)){ 
+      else{
         side = 2;
-        forward()
+        forward();
         delay(500);
       }
     }
